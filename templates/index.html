@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Classification</title>
+</head>
+<body>
+    <h1>Welcome to the Text Classification API!</h1>
+
+    <form method="post" action="{{ url_for('predict') }}">
+        <label for="text">Enter Text:</label>
+        <input type="text" name="text" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if text %}
+        <p>Entered Text: {{ text }}</p>
+    {% endif %}
+
+    {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
